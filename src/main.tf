@@ -15,8 +15,8 @@ resource "tls_cert_request" "client" {
 
 resource "tls_locally_signed_cert" "client" {
   cert_request_pem      = tls_cert_request.client.cert_request_pem
-  ca_private_key_pem    = var.endpoint.private_key_pem // connection
-  ca_cert_pem           = var.endpoint.cert_pem // connection
+  ca_private_key_pem    = var.endpoint.data.authentication.ca_private_key_pem
+  ca_cert_pem           = var.endpoint.data.authentication.ca_certificate_pem
   validity_period_hours = var.validity_hours
   allowed_uses = [
     "key_encipherment",
