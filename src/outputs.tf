@@ -3,7 +3,8 @@ output "artifact_credential" {
   value = {
     data = {
       infrastructure = {
-        dns_name = var.endpoint.data.infrastructure.dns_name
+        dns_name    = var.endpoint.data.infrastructure.dns_name
+        name_prefix = var.md_metadata.name_prefix
       }
       authentication = {
         ca_certificate     = var.endpoint.data.authentication.ca_certificate_pem

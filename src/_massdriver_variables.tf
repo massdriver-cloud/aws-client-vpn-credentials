@@ -1,4 +1,23 @@
 // Auto-generated variable declarations from massdriver.yaml
+variable "endpoint" {
+  type = object({
+    data = object({
+      authentication = object({
+        ca_certificate_pem = string
+        ca_private_key_pem = string
+      })
+      infrastructure = object({
+        arn      = string
+        dns_name = string
+      })
+    })
+    specs = object({
+      aws = optional(object({
+        region = optional(string)
+      }))
+    })
+  })
+}
 variable "md_metadata" {
   type = object({
     default_tags = object({
@@ -26,27 +45,6 @@ variable "md_metadata" {
     })
   })
 }
-// Auto-generated variable declarations from massdriver.yaml
 variable "validity_hours" {
   type = number
-}
-// Auto-generated variable declarations from massdriver.yaml
-variable "endpoint" {
-  type = object({
-    data = object({
-      authentication = object({
-        ca_certificate_pem = optional(string)
-        ca_private_key_pem = string
-      })
-      infrastructure = object({
-        arn      = string
-        dns_name = string
-      })
-    })
-    specs = object({
-      aws = optional(object({
-        region = optional(string)
-      }))
-    })
-  })
 }
