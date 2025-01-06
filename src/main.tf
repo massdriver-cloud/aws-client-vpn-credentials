@@ -10,7 +10,6 @@ resource "tls_cert_request" "client" {
     common_name  = "${var.md_metadata.name_prefix}-client"
     organization = var.md_metadata.name_prefix
   }
-  # dns_names = ["does.not.matter.invalid"]
 }
 
 resource "tls_locally_signed_cert" "client" {
