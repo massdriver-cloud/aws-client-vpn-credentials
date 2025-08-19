@@ -3,7 +3,6 @@ name: aws-client-vpn-credentials
 version: 1.0.0
 description: Creates private key and certificate for authentication to a aws-client-vpn-endpoint bundle.
 source_url: https://github.com/massdriver-cloud/aws-client-vpn-credentials
-type: application
 steps:
 - path: src
   provisioner: opentofu
